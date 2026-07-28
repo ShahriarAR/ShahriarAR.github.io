@@ -25,6 +25,7 @@ The generated website is written to `public/` and is intentionally excluded from
 - The About, Research, Resume, and Contact page content lives in `content/`.
 - Contact details and global metadata live in `hugo.yaml`.
 - The PDF resume is `static/cv/md-shahriar-ahamed-ridoy-cv.pdf`.
+- Public credential PDFs are in `static/certificates/`; their preview images are in `static/images/certificates/`.
 - The portrait and social card are in `static/images/`.
 
 Each new project or note should be a Markdown file with YAML front matter matching the existing examples.
