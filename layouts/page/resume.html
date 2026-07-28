@@ -1,0 +1,31 @@
+{{ define "main" }}
+<header class="page-hero">
+  <div class="shell page-hero-grid"><div><p class="kicker">Resume</p><h1>Experience, education, and <em>capabilities.</em></h1></div><div><p class="page-hero-description">{{ .Params.description }}</p><a class="button button-primary" style="margin-top: 24px" href="{{ "cv/md-shahriar-ahamed-ridoy-cv.pdf" | relURL }}" download>Download PDF resume <span aria-hidden="true">↓</span></a></div></div>
+</header>
+
+<section class="page-section">
+  <div class="shell content-grid">
+    <div class="content-aside">Experience</div>
+    <div class="timeline">
+      <article class="timeline-item" data-reveal><div class="timeline-date">2024–25</div><div><h3>Cyber Security &amp; IT Support Intern</h3><h4>Goinnovior Technologies Limited · Dhaka, Bangladesh</h4><ul><li>Provided day-to-day IT support and practiced operational troubleshooting.</li><li>Worked with Microsoft 365 tools including Office apps, Teams, SharePoint, OneDrive, and Forms.</li><li>Gained exposure to Microsoft Defender, Power Automate, and Copilot in a practical setting.</li><li>Practiced basic networking and routing troubleshooting while building cybersecurity fundamentals.</li></ul></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="page-section page-section-alt">
+  <div class="shell content-grid">
+    <div class="content-aside">Education</div>
+    <div class="timeline">
+      <article class="timeline-item" data-reveal><div class="timeline-date">2026–now</div><div><h3>M.Sc. in CSE — Major in Data Science</h3><h4>Daffodil International University</h4><p>Postgraduate study focused on data science foundations and applications. Current SGPA: 3.08 / 4.00.</p></div></article>
+      <article class="timeline-item" data-reveal><div class="timeline-date">2020–24</div><div><h3>B.Sc. in Computer Science &amp; Engineering</h3><h4>Daffodil International University</h4><p>Undergraduate computer science foundation. CGPA: 2.83 / 4.00.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell content-grid">
+    <div class="content-aside">Profile</div>
+    <article class="prose">{{ .Content }}</article>
+  </div>
+</section>
+{{ end }}

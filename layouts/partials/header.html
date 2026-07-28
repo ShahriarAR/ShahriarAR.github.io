@@ -1,0 +1,28 @@
+<header class="site-header" data-header>
+  <div class="shell header-inner">
+    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }} — home">
+      <span class="brand-mark" aria-hidden="true">SR</span>
+      <span class="brand-copy">
+        <strong>Shahriar Ridoy</strong>
+        <small>Data &amp; Automation</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-nav>
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}" {{ if $.IsMenuCurrent .Menu . }}aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+      <a class="nav-cta" href="{{ "contact/" | relURL }}">Let’s talk</a>
+    </nav>
+
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" data-theme-toggle>
+      <span class="theme-icon" aria-hidden="true">◐</span>
+      <span class="theme-label">Theme</span>
+    </button>
+  </div>
+</header>

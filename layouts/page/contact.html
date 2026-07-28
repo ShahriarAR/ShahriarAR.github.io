@@ -1,0 +1,27 @@
+{{ define "main" }}
+<header class="page-hero">
+  <div class="shell page-hero-grid"><div><p class="kicker">Contact</p><h1>Let’s start a useful <em>conversation.</em></h1></div><p class="page-hero-description">{{ .Params.description }}</p></div>
+</header>
+<section class="page-section">
+  <div class="shell contact-grid">
+    <div class="contact-options" data-reveal>
+      <a class="contact-card" href="mailto:{{ site.Params.email }}"><span>Email</span><strong>{{ site.Params.email }} ↗</strong></a>
+      <a class="contact-card" href="tel:{{ site.Params.phone }}"><span>Call</span><strong>{{ site.Params.phone }} ↗</strong></a>
+      <a class="contact-card" href="{{ site.Params.whatsapp }}"><span>WhatsApp</span><strong>Start a chat ↗</strong></a>
+      <a class="contact-card" href="{{ site.Params.linkedin }}"><span>LinkedIn</span><strong>Connect professionally ↗</strong></a>
+      <div class="contact-card"><span>Location</span><strong>{{ site.Params.location }}</strong></div>
+    </div>
+    <form class="contact-form" data-contact-form data-reveal>
+      <p class="kicker">Send an email</p>
+      <div class="form-row">
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" required></div>
+      <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+      <button class="button button-primary" type="submit">Open in email app <span aria-hidden="true">↗</span></button>
+      <p class="form-note">This form opens your default email application; your message is not stored on this website.</p>
+    </form>
+  </div>
+</section>
+{{ end }}

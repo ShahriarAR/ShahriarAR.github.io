@@ -1,0 +1,14 @@
+{{ define "main" }}
+<header class="page-hero">
+  <div class="shell page-hero-grid">
+    <div><p class="kicker">{{ .Params.kicker | default "Portfolio" }}</p><h1>{{ .Title }}</h1></div>
+    <p class="page-hero-description">{{ .Params.description }}</p>
+  </div>
+</header>
+<section class="page-section">
+  <div class="shell content-grid">
+    <div class="content-aside">{{ .Params.aside | default "Overview" }}</div>
+    <article class="prose">{{ .Content }}</article>
+  </div>
+</section>
+{{ end }}

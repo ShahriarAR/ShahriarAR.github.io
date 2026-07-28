@@ -1,0 +1,77 @@
+baseURL: https://shahriarar.github.io/
+locale: en-US
+title: MD. Shahriar Ahamed Ridoy
+copyright: MD. Shahriar Ahamed Ridoy
+enableRobotsTXT: true
+enableGitInfo: false
+timeZone: Asia/Dhaka
+
+pagination:
+  pagerSize: 9
+
+permalinks:
+  projects: /projects/:slug/
+  notes: /notes/:slug/
+
+taxonomies:
+  tag: tags
+  category: categories
+
+outputs:
+  home:
+    - HTML
+    - RSS
+  section:
+    - HTML
+    - RSS
+
+caches:
+  images:
+    dir: :cacheDir/images
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+  highlight:
+    noClasses: false
+    lineNos: false
+
+minify:
+  minifyOutput: true
+
+params:
+  description: Data and automation-focused software professional building reliable tools for real operational problems.
+  author: MD. Shahriar Ahamed Ridoy
+  role: Data & Automation Builder
+  email: shahriarahamedr@gmail.com
+  phone: "+8801785400192"
+  location: Mirpur-2, Dhaka, Bangladesh
+  github: https://github.com/ShahriarAR
+  linkedin: https://linkedin.com/in/md-shahriar-ahamed-ridoy-7115b822a
+  whatsapp: https://wa.me/8801785400192
+  ogImage: /images/og-card.png
+
+menus:
+  main:
+    - name: Home
+      pageRef: /
+      weight: 10
+    - name: About
+      pageRef: /about
+      weight: 20
+    - name: Projects
+      pageRef: /projects
+      weight: 30
+    - name: Research
+      pageRef: /research
+      weight: 40
+    - name: Notes
+      pageRef: /notes
+      weight: 50
+    - name: Resume
+      pageRef: /resume
+      weight: 60
+    - name: Contact
+      pageRef: /contact
+      weight: 70

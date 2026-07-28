@@ -1,0 +1,25 @@
+<article class="project-card" data-category="{{ delimit .Params.categories " " | lower }}" data-reveal>
+  <div class="project-visual project-visual--{{ .Params.visual | default "grid" }}" aria-hidden="true">
+    <span class="project-index">0{{ .Params.project_number }}</span>
+    <div class="project-glyph">
+      {{ if eq .Params.visual "qr" }}
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      {{ else if eq .Params.visual "sheets" }}
+        <span></span><span></span><span></span>
+      {{ else }}
+        <b>A</b><span>→</span><b>Z</b>
+      {{ end }}
+    </div>
+  </div>
+  <div class="project-card-body">
+    <div class="project-meta">
+      {{ range .Params.categories }}<span>{{ . }}</span>{{ end }}
+    </div>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Params.summary }}</p>
+    <div class="stack-list" aria-label="Technology stack">
+      {{ range first 4 .Params.stack }}<span>{{ . }}</span>{{ end }}
+    </div>
+    <a class="text-link" href="{{ .RelPermalink }}">Read case study <span aria-hidden="true">↗</span></a>
+  </div>
+</article>

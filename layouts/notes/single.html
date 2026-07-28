@@ -1,0 +1,12 @@
+{{ define "main" }}
+<header class="shell article-header">
+  <div class="article-meta"><a href="{{ "notes/" | relURL }}">Data Science Notes</a><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 January 2006" }}</time><span>{{ .ReadingTime }} min read</span></div>
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Params.description }}</p>
+  <div class="note-tags" style="margin-top: 24px">{{ range .Params.tags }}<span>#{{ . }}</span>{{ end }}</div>
+</header>
+<section class="shell article-layout">
+  <aside class="share-links"><span>Elsewhere</span><a href="{{ site.Params.linkedin }}">LinkedIn ↗</a><a href="{{ site.Params.github }}">GitHub ↗</a><a href="mailto:{{ site.Params.email }}">Email ↗</a></aside>
+  <article class="prose">{{ .Content }}<a class="text-link article-back" href="{{ "notes/" | relURL }}"><span aria-hidden="true">←</span> Back to all notes</a></article>
+</section>
+{{ end }}

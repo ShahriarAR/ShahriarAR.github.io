@@ -1,0 +1,19 @@
+{{ define "main" }}
+<header class="page-hero">
+  <div class="shell page-hero-grid"><div><p class="kicker">Research</p><h1>Applied forecasting, compared with <em>care.</em></h1></div><p class="page-hero-description">{{ .Params.description }}</p></div>
+</header>
+<section class="page-section">
+  <div class="shell research-layout">
+    <article class="prose" data-reveal>{{ .Content }}</article>
+    <aside class="research-detail-card" data-reveal>
+      <p class="kicker">Publication details</p>
+      <div class="detail-row"><span>Published</span><strong>2024</strong></div>
+      <div class="detail-row"><span>Authors</span><strong>MD. Shahriar Ahamed Ridoy<br>Aisha Afroj</strong></div>
+      <div class="detail-row"><span>Focus</span><strong>Time-series sales prediction</strong></div>
+      <div class="detail-row"><span>Models</span><strong>ARIMA · Prophet · LSTM</strong></div>
+      <div class="stack-list" style="margin-top: 24px"><span>Forecasting</span><span>Comparative modeling</span><span>Applied data science</span></div>
+    </aside>
+  </div>
+</section>
+<section class="section cta-section"><div class="shell cta-card" data-reveal><div><p class="kicker">Current direction</p><h2>Taking applied data work further.</h2></div><div><p>My M.Sc. in CSE, majoring in Data Science, continues this interest in useful analysis and grounded modeling.</p><a class="button button-light" href="{{ "notes/" | relURL }}">Read Data Science Notes <span aria-hidden="true">→</span></a></div></div></section>
+{{ end }}

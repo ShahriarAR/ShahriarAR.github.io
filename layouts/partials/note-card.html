@@ -1,0 +1,10 @@
+<article class="note-card" data-reveal>
+  <div class="note-meta">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+    <span>{{ .ReadingTime }} min read</span>
+  </div>
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p>{{ .Params.description }}</p>
+  <div class="note-tags">{{ range .Params.tags }}<span>#{{ . }}</span>{{ end }}</div>
+  <a class="text-link" href="{{ .RelPermalink }}">Read note <span aria-hidden="true">→</span></a>
+</article>

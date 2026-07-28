@@ -1,0 +1,18 @@
+{{ define "main" }}
+<header class="page-hero">
+  <div class="shell page-hero-grid"><div><p class="kicker">Selected projects</p><h1>Practical tools, built for <em>real work.</em></h1></div><p class="page-hero-description">{{ .Params.description }}</p></div>
+</header>
+<section class="page-section projects-list">
+  <div class="shell">
+    <div class="filter-bar" aria-label="Filter projects">
+      <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All work</button>
+      <button class="filter-button" type="button" data-filter="desktop" aria-pressed="false">Desktop</button>
+      <button class="filter-button" type="button" data-filter="data" aria-pressed="false">Data</button>
+      <button class="filter-button" type="button" data-filter="automation" aria-pressed="false">Automation</button>
+    </div>
+    <div class="project-grid">
+      {{ range .Pages.ByWeight }}{{ partial "project-card.html" . }}{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

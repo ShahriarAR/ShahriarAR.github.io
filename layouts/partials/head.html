@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+{{ $pageTitle := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
+{{ $description := .Params.description | default site.Params.description }}
+<title>{{ $pageTitle }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ site.Params.author }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ "index.xml" | absURL }}">
+
+<meta property="og:type" content="{{ if eq .Section "notes" }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ $pageTitle }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:image" content="{{ site.Params.ogImage | absURL }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MD. Shahriar Ahamed Ridoy — Data, Automation, Practical Software">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $pageTitle }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ site.Params.ogImage | absURL }}">
+
+<script>
+  document.documentElement.classList.add("js");
+  try {
+    const savedTheme = localStorage.getItem("theme");
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    document.documentElement.dataset.theme = savedTheme || preferredTheme;
+  } catch (_) {}
+</script>
+
+{{ $style := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+
+{{ if .IsHome }}
+  {{ $sameAs := slice site.Params.github site.Params.linkedin }}
+  {{ $schema := dict "@context" "https://schema.org" "@type" "Person" "name" site.Params.author "url" site.BaseURL "image" ("images/shahriar-portrait.png" | absURL) "jobTitle" "Data and Automation Builder" "email" (printf "mailto:%s" site.Params.email) "address" (dict "@type" "PostalAddress" "addressLocality" "Dhaka" "addressCountry" "Bangladesh") "sameAs" $sameAs }}
+  <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{ else if and (eq .Section "notes") (eq .Kind "page") }}
+  {{ $schema := dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" $description "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "author" (dict "@type" "Person" "name" site.Params.author "url" site.BaseURL) "mainEntityOfPage" .Permalink }}
+  <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{ end }}

@@ -1,0 +1,40 @@
+{{ define "main" }}
+<header class="page-hero">
+  <div class="shell page-hero-grid">
+    <div><p class="kicker">About me</p><h1>A practical builder with a <em>data mindset.</em></h1></div>
+    <p class="page-hero-description">{{ .Params.description }}</p>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="shell about-intro">
+    <figure class="about-portrait" data-reveal><img src="{{ "images/shahriar-portrait.png" | relURL }}" width="512" height="512" alt="MD. Shahriar Ahamed Ridoy in formal attire"></figure>
+    <div class="about-copy prose" data-reveal>{{ .Content }}</div>
+  </div>
+</section>
+
+<section class="page-section page-section-alt">
+  <div class="shell">
+    <div class="section-heading"><div><p class="kicker">Working principles</p><h2>What shapes the way I build.</h2></div><p>Good software earns trust through careful details, not inflated complexity.</p></div>
+    <div class="values-grid">
+      <article class="value-card" data-reveal><span>01</span><h3>Useful before impressive</h3><p>I prioritize solving the actual workflow and reducing friction for the person using the tool.</p></article>
+      <article class="value-card" data-reveal><span>02</span><h3>Safe by design</h3><p>Validation, previews, backups, and reversible steps make software easier to trust.</p></article>
+      <article class="value-card" data-reveal><span>03</span><h3>Clarity over complexity</h3><p>I prefer understandable systems that can be maintained, explained, and improved.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell">
+    <div class="section-heading"><div><p class="kicker">Technical toolkit</p><h2>Built across software, data, and workplace systems.</h2></div><p>A broad foundation shaped by hands-on desktop tooling, spreadsheet automation, support, and postgraduate study.</p></div>
+    <div class="skills-grid">
+      <article class="skill-group" data-reveal><h3>Languages</h3><p>General-purpose programming and web foundations.</p><div class="skill-cloud"><span>Python</span><span>C</span><span>C++</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Dart</span></div></article>
+      <article class="skill-group" data-reveal><h3>Desktop applications</h3><p>Usable Windows tools with packaged distribution.</p><div class="skill-cloud"><span>PySide6</span><span>Tkinter</span><span>ttkbootstrap</span><span>PyInstaller</span></div></article>
+      <article class="skill-group" data-reveal><h3>Python &amp; data</h3><p>Structured handling of spreadsheet-heavy workflows.</p><div class="skill-cloud"><span>pandas</span><span>openpyxl</span><span>Excel automation</span><span>Data cleaning</span></div></article>
+      <article class="skill-group" data-reveal><h3>Microsoft 365</h3><p>Productivity, collaboration, automation, and security tools.</p><div class="skill-cloud"><span>Teams</span><span>SharePoint</span><span>OneDrive</span><span>Forms</span><span>Power Automate</span><span>Defender</span><span>Copilot</span></div></article>
+      <article class="skill-group" data-reveal><h3>Automation &amp; support</h3><p>Tools and practices for dependable operations.</p><div class="skill-cloud"><span>Selenium</span><span>Troubleshooting</span><span>Basic networking</span></div></article>
+      <article class="skill-group" data-reveal><h3>Current direction</h3><p>Strengthening the bridge between practical engineering and data science.</p><div class="skill-cloud"><span>Data science</span><span>Forecasting</span><span>Applied modeling</span><span>Workflow design</span></div></article>
+    </div>
+  </div>
+</section>
+{{ end }}

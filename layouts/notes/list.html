@@ -1,0 +1,8 @@
+{{ define "main" }}
+<header class="page-hero">
+  <div class="shell page-hero-grid"><div><p class="kicker">Data Science Notes</p><h1>Learning in public, with a <em>practical lens.</em></h1></div><p class="page-hero-description">{{ .Params.description }}</p></div>
+</header>
+<section class="page-section notes-list">
+  <div class="shell notes-grid">{{ range .Pages.ByDate.Reverse }}{{ partial "note-card.html" . }}{{ end }}</div>
+</section>
+{{ end }}

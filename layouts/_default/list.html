@@ -1,0 +1,9 @@
+{{ define "main" }}
+<header class="page-hero">
+  <div class="shell page-hero-grid">
+    <div><p class="kicker">{{ .Params.kicker | default "Explore" }}</p><h1>{{ .Title }}</h1></div>
+    <p class="page-hero-description">{{ .Params.description }}</p>
+  </div>
+</header>
+<section class="page-section"><div class="shell prose">{{ .Content }}</div></section>
+{{ end }}
