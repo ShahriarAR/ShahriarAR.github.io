@@ -125,7 +125,7 @@ button { color: inherit; }
 .eyebrow { display: flex; align-items: center; gap: 10px; }
 .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 13%, transparent); animation: pulse 2.4s ease-in-out infinite; }
 @keyframes pulse { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 2%, transparent); } }
-.hero h1 { max-width: 800px; margin: 0; font-size: clamp(3.35rem, 6.5vw, 6.5rem); line-height: .94; letter-spacing: -.072em; }
+.hero h1 { max-width: 800px; margin: 0; font-size: clamp(3.35rem, 5.8vw, 6.2rem); line-height: .96; letter-spacing: -.066em; text-wrap: balance; }
 .hero h1 em { display: block; margin-top: .1em; color: var(--accent); font-family: var(--serif); font-weight: 400; letter-spacing: -.045em; }
 .hero-lead { max-width: 680px; margin: 32px 0 0; color: var(--ink-soft); font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.75; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
@@ -147,11 +147,11 @@ button { color: inherit; }
 .portrait-orbit { position: absolute; border: 1px solid var(--line-strong); border-radius: 50%; }
 .portrait-orbit-one { top: 4%; right: -14%; width: 430px; height: 430px; }
 .portrait-orbit-two { top: 20%; right: -3%; width: 300px; height: 300px; border-color: color-mix(in srgb, var(--accent-two) 38%, transparent); }
-.portrait-chip { position: absolute; z-index: 3; display: grid; gap: 2px; min-width: 155px; padding: 14px 16px; border: 1px solid var(--line-strong); background: color-mix(in srgb, var(--paper-raised) 91%, transparent); box-shadow: 0 14px 40px rgba(0,0,0,.18); backdrop-filter: blur(14px); }
+.portrait-info { position: absolute; z-index: 3; right: 0; bottom: 0; left: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-strong); background: color-mix(in srgb, var(--paper-raised) 91%, transparent); backdrop-filter: blur(16px); }
+.portrait-chip { display: grid; gap: 3px; min-width: 0; padding: 15px 17px; }
+.portrait-chip + .portrait-chip { border-left: 1px solid var(--line-strong); }
 .portrait-chip span { color: var(--ink-faint); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; }
-.portrait-chip strong { font-size: .8rem; }
-.chip-location { left: -34px; top: 23%; }
-.chip-focus { right: -28px; bottom: 13%; }
+.portrait-chip strong { overflow-wrap: anywhere; font-size: .78rem; line-height: 1.35; }
 
 .proof-strip { position: relative; z-index: 3; display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 76px; border-block: 1px solid var(--line); background: color-mix(in srgb, var(--paper) 80%, transparent); }
 .proof-strip > div { display: grid; gap: 4px; padding: 28px 24px; }
@@ -373,8 +373,6 @@ button { color: inherit; }
   .hero-grid { grid-template-columns: 1fr .8fr; gap: 40px; }
   .hero h1 { font-size: clamp(3.2rem, 6.4vw, 5.3rem); }
   .portrait-stage { min-height: 450px; }
-  .chip-location { left: -15px; }
-  .chip-focus { right: -12px; }
   .project-grid { grid-template-columns: repeat(2, 1fr); }
   .project-card:last-child { grid-column: span 2; }
   .project-card:last-child .project-visual { aspect-ratio: 2.25; }
@@ -440,9 +438,9 @@ button { color: inherit; }
   .hero-signals { gap: 8px 12px; }
   .portrait-stage { min-height: 450px; }
   .portrait-frame { width: calc(100% - 10px); }
-  .portrait-chip { min-width: 140px; padding: 11px 12px; }
-  .chip-location { top: 7%; left: -4px; }
-  .chip-focus { right: -4px; bottom: 5%; }
+  .portrait-chip { padding: 11px 12px; }
+  .portrait-chip span { font-size: .58rem; }
+  .portrait-chip strong { font-size: .7rem; }
   .proof-strip { margin-top: 48px; }
   .proof-strip > div { padding: 20px 14px; }
   .proof-strip strong { font-size: 1.55rem; }
